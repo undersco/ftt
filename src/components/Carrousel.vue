@@ -64,10 +64,6 @@ export default {
           slidesPerView: 4,
           spaceBetween: 10,
         },
-        769: {
-          slidesPerView: 4,
-          spaceBetween: 10,
-        },
       },
     });
     console.log(swiper);
