@@ -1,49 +1,130 @@
 <template>
-    <DefaultLayout>
-        <router-view/>
-    </DefaultLayout>
+  <DefaultLayout>
+    <router-view />
+  </DefaultLayout>
 </template>
 
 <script>
 import DefaultLayout from "./layouts/DefaultLayout";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-      DefaultLayout
-  }
-}
+    DefaultLayout,
+  },
+};
 </script>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600&display=swap');
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+:root {
+  --white: #fff;
+  --dark: #000;
 }
-h1, h2, h3, h4, h5, h6, p, input, button, select, textarea, a {
-    font-size: inherit;
-    font-weight: inherit;
-    color: inherit;
-    font-family: inherit;
-    line-height: inherit;
+html:focus-within {
+  scroll-behavior: smooth;
 }
-a {
-    text-decoration: none;
-}
-ul {
-    list-style-type: none;
-}
-button, input, textarea, select {
-    background-color: inherit;
-    border: 0;
-    outline: 0;
+html {
+  height: -webkit-fill-available;
 }
 body {
-    font-family: 'Open Sans', sans-serif;
-    position: relative;
-    font-size: 13px;
-    line-height: 1.8;
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  font-family: "Open Sans", sans-serif;
+  position: relative;
+  font-size: 13px;
+  line-height: 1.8;
+}
+@supports (-webkit-touch-callout: none) {
+  body {
+    /* The hack for Safari */
+    min-height: -webkit-fill-available;
+  }
+}
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+input,
+button,
+select,
+textarea,
+a {
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  font-family: "Open Sans", sans-serif;
+  line-height: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+a {
+  text-decoration: none;
+}
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+ul,
+ul[role="list"],
+ol[role="list"] {
+  list-style-type: none;
+}
+button,
+input,
+textarea,
+select {
+  background-color: inherit;
+  border: 0;
+  outline: 0;
+}
+
+/*CS STYLES */
+h1 {
+  font-size: clamp(4.375rem, 3.8942rem + 2.4038vw, 7.5rem);
+}
+h2 {
+  font-size: clamp(1.8rem, 1.1538rem + 0.4808vw, 2.5rem);
+  margin-bottom: 2rem;
+}
+h3 {
+  font-size: clamp(1.25rem, 1.1538rem + 0.4808vw, 1.875rem);
+}
+h4 {
+  font-size: clamp(0.875rem, 0.8365rem + 0.1923vw, 1.125rem);
+}
+p {
+  margin-bottom: 1rem;
+}
+.container {
+  max-width: 1140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0 auto;
 }
 </style>
