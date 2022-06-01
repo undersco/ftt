@@ -27,13 +27,16 @@
             </div>
           </article>
         </div>
+        <div class="swiper-scrollbar"></div>
       </div>
     </div>
   </section>
 </template>
 <script>
-import Swiper from "swiper";
-import "swiper/css";
+import Swiper, {  Scrollbar } from 'swiper';
+  // import Swiper and modules styles
+  import 'swiper/css';
+  import 'swiper/css/scrollbar';
 export default {
   name: "CarrouselVue",
   data() {
@@ -57,6 +60,10 @@ export default {
     const swiper = new Swiper(".swiper", {
       slidesPerView: 4,
       spaceBetween: 10,
+      modules: [Scrollbar],
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
       breakpoints: {
         320: {
           slidesPerView: 2,
@@ -78,6 +85,9 @@ export default {
 }
 .carrousel__container {
   margin: 4rem 0;
+}
+.swiper-wrapper {
+  margin:2rem 0
 }
 .product__image {
   position: relative;
@@ -112,9 +122,18 @@ export default {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.swiper-scrollbar {
+  position:relative;
+  display: none;
+  
+}
 @media (max-width: 768px) {
   .carrousel {
     padding: 2.5rem 2rem;
+  }
+  .swiper-scrollbar {
+    margin-top: auto;
+    display: flex;
   }
 }
 </style>
