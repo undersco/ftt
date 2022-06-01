@@ -90,6 +90,7 @@
       <div class="shopify-items">
         <img
           src="./../assets/images/icon-cart.png"
+          loading="lazy"
           alt="Votre panier"
           width="10px"
           class="show_modal"
@@ -108,6 +109,7 @@
       <div class="modal-title">
         <img
           src="./../assets/images/icon-cart.png"
+          loading="lazy"
           alt="Votre Panier"
           width="32"
         />

@@ -8,12 +8,14 @@
             <div class="product__image">
               <img
                 :src="data.image"
+                loading="lazy"
                 :alt="
                   'The Kooples Second Love ' + data.title + ' - ' + data.price + '€'
                 "
               />
               <img
                 :src="data.image"
+                loading="lazy"
                 :alt="
                   'The Kooples Second Love ' + data.title + ' - ' + data.price + '€'
                 "
