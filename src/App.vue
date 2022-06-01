@@ -31,7 +31,7 @@ body {
   margin: 0;
   min-height: 100vh;
   text-rendering: optimizeSpeed;
-  font-family: "Open Sans", sans-serif;
+  font-family: "open_sansregular", sans-serif;
   position: relative;
   font-size: 13px;
   line-height: 1.8;
