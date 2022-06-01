@@ -79,7 +79,7 @@ a {
   font-size: inherit;
   font-weight: inherit;
   color: inherit;
-  font-family: "open_sansregular", sans-serif;
+  font-family: inherit;
   line-height: inherit;
 }
 h1,
@@ -90,6 +90,14 @@ h5,
 h6 {
   font-family: 'open_sansbold', sans-serif;
   text-transform: uppercase;
+}
+p,
+input,
+button,
+select,
+textarea,
+a {
+    font-family: 'open_sansregular', sans-serif;
 }
 a {
   text-decoration: none;
