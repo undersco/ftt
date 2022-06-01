@@ -42,7 +42,21 @@ body {
     min-height: -webkit-fill-available;
   }
 }
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+@font-face {
+  font-family: "open_sansregular";
+  src: local("open_sansregular"),
+    url("./assets/fonts/OpenSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "open_sansbold";
+  src: local("open_sansbold"), url("./assets/fonts/OpenSans-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 *,
 *::before,
 *::after {
@@ -65,7 +79,7 @@ a {
   font-size: inherit;
   font-weight: inherit;
   color: inherit;
-  font-family: "Open Sans", sans-serif;
+  font-family: "open_sansregular", sans-serif;
   line-height: inherit;
 }
 h1,
@@ -74,7 +88,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 700;
+  font-family: 'open_sansbold', sans-serif;
   text-transform: uppercase;
 }
 a {
