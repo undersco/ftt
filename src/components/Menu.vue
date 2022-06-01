@@ -208,6 +208,7 @@ export default {
   color: var(--white);
 }
 .header__container a {
+  font-family: 'open_sansbold', sans-serif;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
