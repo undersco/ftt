@@ -60,6 +60,9 @@ export default {
   padding-left: 2rem;
   z-index: 9;
 }
+.collections-item h3 a {
+  font-family: 'open_sansbold', sans-serif;
+}
 .collections-item h3 a:before {
   content: "";
   position: absolute;
