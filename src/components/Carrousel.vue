@@ -65,6 +65,7 @@ export default {
           320: {
             slidesPerView: 2,
             spaceBetween: 10,
+            loop: true,
           },
           768: {
             slidesPerView: 4,
@@ -74,8 +75,8 @@ export default {
       });
       swiper.init();
     },
-    getProducts() {
-      fetch("https://fakestoreapi.com/products/")
+    getProducts(API_URL) {
+      fetch(API_URL)
         .then((response) => response.json())
         .then((data) => (this.post = data))
         .finally(() => this.initSwiper())
@@ -85,7 +86,14 @@ export default {
     },
   },
   mounted() {
-    this.getProducts();
+    //A Faire, penser au eventListener onresize et creer une const URLBASEAPI
+    console.log(window.innerWidth);
+    if (window.innerWidth >= 768) {
+      this.getProducts("https://fakestoreapi.com/products?limit=4");
+    }
+    if (window.innerWidth < 768) {
+      this.getProducts("https://fakestoreapi.com/products/");
+    }
   },
 };
 </script>
