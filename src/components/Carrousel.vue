@@ -10,14 +10,22 @@
                 :src="data.image"
                 loading="lazy"
                 :alt="
-                  'The Kooples Second Love ' + data.title + ' - ' + data.price + '€'
+                  'The Kooples Second Love ' +
+                  data.title +
+                  ' - ' +
+                  data.price +
+                  '€'
                 "
               />
               <img
                 :src="data.image"
                 loading="lazy"
                 :alt="
-                  'The Kooples Second Love ' + data.title + ' - ' + data.price + '€'
+                  'The Kooples Second Love ' +
+                  data.title +
+                  ' - ' +
+                  data.price +
+                  '€'
                 "
               />
             </div>
@@ -33,10 +41,10 @@
   </section>
 </template>
 <script>
-import Swiper, {  Scrollbar } from 'swiper';
-  // import Swiper and modules styles
-  import 'swiper/css';
-  import 'swiper/css/scrollbar';
+import Swiper, { Scrollbar } from "swiper";
+// import Swiper and modules styles
+import "swiper/css";
+import "swiper/css/scrollbar";
 export default {
   name: "CarrouselVue",
   data() {
@@ -45,10 +53,32 @@ export default {
     };
   },
   methods: {
+    initSwiper() {
+      const swiper = new Swiper(".swiper", {
+        slidesPerView: 4,
+        spaceBetween: 10,
+        modules: [Scrollbar],
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 10,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 10,
+          },
+        },
+      });
+      swiper.init();
+    },
     getProducts() {
       fetch("https://fakestoreapi.com/products/")
         .then((response) => response.json())
         .then((data) => (this.post = data))
+        .finally(() => this.initSwiper())
         .catch((error) => {
           console.log("Fetch: " + error.message);
         });
@@ -56,26 +86,6 @@ export default {
   },
   mounted() {
     this.getProducts();
-
-    const swiper = new Swiper(".swiper", {
-      slidesPerView: 4,
-      spaceBetween: 10,
-      modules: [Scrollbar],
-      scrollbar: {
-        el: '.swiper-scrollbar',
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 2,
-          spaceBetween: 10,
-        },
-        768: {
-          slidesPerView: 4,
-          spaceBetween: 10,
-        },
-      },
-    });
-    console.log(swiper);
   },
 };
 </script>
@@ -87,7 +97,7 @@ export default {
   margin: 4rem 0;
 }
 .swiper-wrapper {
-  margin:2rem 0
+  margin: 2rem 0;
 }
 .product__image {
   position: relative;
@@ -123,9 +133,8 @@ export default {
   text-overflow: ellipsis;
 }
 .swiper-scrollbar {
-  position:relative;
+  position: relative;
   display: none;
-  
 }
 @media (max-width: 768px) {
   .carrousel {
