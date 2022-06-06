@@ -1,37 +1,38 @@
 <template>
   <section class="carrousel">
     <h3>Notre Sélection</h3>
+    <!-- END CARROUSEL-->
     <div class="carrousel__container">
       <div class="swiper">
         <div class="swiper-wrapper">
-          <article class="swiper-slide" v-for="data in post" :key="data.id">
+          <article
+            class="swiper-slide"
+            v-for="product in products"
+            :key="product.id"
+          >
             <div class="product__image">
               <img
-                :src="data.image"
-                loading="lazy"
+                :src="product.image"
                 :alt="
                   'The Kooples Second Love ' +
-                  data.title +
-                  ' - ' +
-                  data.price +
-                  '€'
+                  product.title +
+                  ' ' +
+                  product.price
                 "
               />
               <img
-                :src="data.image"
-                loading="lazy"
+                :src="product.image"
                 :alt="
                   'The Kooples Second Love ' +
-                  data.title +
-                  ' - ' +
-                  data.price +
-                  '€'
+                  product.title +
+                  ' ' +
+                  product.price
                 "
               />
             </div>
             <div class="product__description">
-              <h4>{{ data.title }}</h4>
-              <span>{{ data.price }} €</span>
+              <h4>{{ product.title }}</h4>
+              <span>{{ product.price }}€</span>
             </div>
           </article>
         </div>
@@ -41,20 +42,15 @@
   </section>
 </template>
 <script>
+import { mapActions, mapGetters } from "vuex";
 import Swiper, { Scrollbar } from "swiper";
-// import Swiper and modules styles
 import "swiper/css";
 import "swiper/css/scrollbar";
 export default {
   name: "CarrouselVue",
   data() {
     return {
-      post: [],
-    };
-  },
-  methods: {
-    initSwiper() {
-      const swiper = new Swiper(".swiper", {
+      swiper: new Swiper(".swiper", {
         slidesPerView: 4,
         spaceBetween: 10,
         modules: [Scrollbar],
@@ -70,30 +66,22 @@ export default {
           768: {
             slidesPerView: 4,
             spaceBetween: 10,
+            loop: false,
           },
         },
-      });
-      swiper.init();
-    },
-    getProducts(API_URL) {
-      fetch(API_URL)
-        .then((response) => response.json())
-        .then((data) => (this.post = data))
-        .finally(() => this.initSwiper())
-        .catch((error) => {
-          console.log("Fetch: " + error.message);
-        });
-    },
+      }),
+    };
   },
+  computed: {
+    ...mapGetters(["products"]),
+  },
+  methods: {
+    ...mapActions(["fetchAllProducts"]),
+  },
+  created() {},
   mounted() {
-    //A Faire, penser au eventListener onresize et creer une const URLBASEAPI
-    console.log(window.innerWidth);
-    if (window.innerWidth >= 768) {
-      this.getProducts("https://fakestoreapi.com/products?limit=4");
-    }
-    if (window.innerWidth < 768) {
-      this.getProducts("https://fakestoreapi.com/products/");
-    }
+    this.fetchAllProducts();
+    this.swiper.init();
   },
 };
 </script>

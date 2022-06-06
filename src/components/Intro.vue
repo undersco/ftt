@@ -41,9 +41,7 @@ export default {
   display: flex;
   padding: 8rem 5rem;
 }
-intro h2 {
-  margin-bottom: 2rem;
-}
+.intro h2,
 .container p {
   text-align: center;
   margin-bottom: 2rem;

@@ -57,8 +57,8 @@
           <div class="faq__answer">
             <p>
               Si vous constatez une non conformité, vous pouvez contacter le
-              service clients&nbsp;<strong>Heimstone</strong><b>&nbsp;</b>à
-              TheKooples - Second Love.Il vous demandera de transmettre :
+              service clients&nbsp;<strong>TheKooples - Second Love</strong>. Il
+              vous demandera de transmettre :
             </p>
             <p>- Votre numéro de commande</p>
             <p>- Nom du produit, la couleur, la taille et l'EAN</p>

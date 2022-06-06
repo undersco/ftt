@@ -208,7 +208,7 @@ export default {
   color: var(--white);
 }
 .header__container a {
-  font-family: 'open_sansbold', sans-serif;
+  font-family: "open_sansbold", sans-serif;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
@@ -344,6 +344,7 @@ export default {
   .responsive_nav {
     display: block;
     margin-left: 1rem;
+    margin-top: -0.5rem;
   }
   .menu__nav {
     transition: all ease-in-out 0.25s;
