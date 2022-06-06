@@ -345,6 +345,7 @@ export default {
     display: block;
     margin-left: 1rem;
     margin-top: -0.5rem;
+    cursor: pointer;
   }
   .menu__nav {
     transition: all ease-in-out 0.25s;
