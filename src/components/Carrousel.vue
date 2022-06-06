@@ -78,9 +78,10 @@ export default {
   methods: {
     ...mapActions(["fetchAllProducts"]),
   },
-  created() {},
-  mounted() {
+  created() {
     this.fetchAllProducts();
+  },
+  mounted() {
     this.swiper.init();
   },
 };
